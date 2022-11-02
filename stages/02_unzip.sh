@@ -10,6 +10,11 @@ echo "Local path: $localpath"
 downloadpath="$localpath/download"
 echo "Download path: $downloadpath"
 
+# Raw data path
+rawpath="$localpath/raw"
+mkdir -p $rawpath
+echo "Raw path: $downloadpath"
+
 # move in the download folder
 cd $downloadpath
 
@@ -18,6 +23,6 @@ gzfile=(*)
 echo "gz path: $gzfile"
 
 # Unzip file
-unzip $downloadpath/$gzfile
+unzip $downloadpath/$gzfile -d $rawpath
 echo "Unzip done"
 
