@@ -10,19 +10,14 @@ echo "Local path: $localpath"
 downloadpath="$localpath/download"
 echo "Download path: $downloadpath"
 
+# move in the download folder
+cd $downloadpath
+
 # Set list path
-listpath="$localpath/list"
-echo "List path: $listpath"
+gzfile=(*)
+echo "gz path: $gzfile"
 
-# Create raw path
-rawpath="$localpath/raw"
-mkdir -p $rawpath
-echo "Raw path: $rawpath"
+# Unzip file
+unzip $downloadpath/$gzfile
+echo "Unzip done"
 
-# Unzip files in parallel
-cat $listpath/files.txt | tail -n +2 | xargs -P14 -n1 bash -c '
-  filename="${1%.*}"
-  echo '$downloadpath'/$1
-  echo '$rawpath'/$filename
-  unzip '$downloadpath'/$1 -d '$rawpath'/$filename
-' {}

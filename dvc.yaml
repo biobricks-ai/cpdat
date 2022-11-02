@@ -15,13 +15,11 @@ stages:
       - stages/01_download.sh
     outs:
       - download
-      - list
   unzip: 
     cmd: stages/02_unzip.sh
     deps:
       - stages/02_unzip.sh
       - download
-      - list
     outs:
       - raw
   build: 
