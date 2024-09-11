@@ -1,47 +1,47 @@
----
 schema: '2.0'
 stages:
   build:
-    cmd: stages/03_build.sh
+    cmd: python stages/03_build.py
     deps:
-    - md5: 75ab6120bac0a1065986912e5e5eb79b.dir
-      nfiles: 11
-      path: raw
+    - path: raw
+      md5: 75ab6120bac0a1065986912e5e5eb79b.dir
       size: 572654300
-    - md5: ad705d3aff32f182707d7aa88a87fd18
-      path: stages/03_build.sh
-      size: 410
-    - md5: 9fe6f058abb56acd3f330ec3d1e34e03
-      path: stages/csv2parquet.py
-      size: 660
+      nfiles: 11
+    - path: stages/03_build.py
+      hash: md5
+      md5: d24fc4f447d1dee7a672ee735efef1f7
+      size: 777
     outs:
-    - md5: 92fec7f055de167dfabdea546b4fa407.dir
+    - path: brick
+      hash: md5
+      md5: fbc4fa7b30c3b0fa89954d6d14dfccd4.dir
+      size: 153212127
       nfiles: 10
-      path: brick
-      size: 155500050
   download:
     cmd: stages/01_download.sh
     deps:
-    - md5: 9ad7abc4441bb03db746763323943f66
-      path: stages/01_download.sh
+    - path: stages/01_download.sh
+      md5: 9ad7abc4441bb03db746763323943f66
       size: 558
+      isexec: true
     outs:
-    - md5: 4f1c0c762afa84306d347f4b366b11d2.dir
-      nfiles: 1
-      path: download
+    - path: download
+      md5: 4f1c0c762afa84306d347f4b366b11d2.dir
       size: 93725827
+      nfiles: 1
   unzip:
     cmd: stages/02_unzip.sh
     deps:
-    - md5: 4f1c0c762afa84306d347f4b366b11d2.dir
-      nfiles: 1
-      path: download
+    - path: download
+      md5: 4f1c0c762afa84306d347f4b366b11d2.dir
       size: 93725827
-    - md5: d0e1b99ce0d7915c3becc3fa210348d2
-      path: stages/02_unzip.sh
+      nfiles: 1
+    - path: stages/02_unzip.sh
+      md5: d0e1b99ce0d7915c3becc3fa210348d2
       size: 466
+      isexec: true
     outs:
-    - md5: 75ab6120bac0a1065986912e5e5eb79b.dir
-      nfiles: 11
-      path: raw
+    - path: raw
+      md5: 75ab6120bac0a1065986912e5e5eb79b.dir
       size: 572654300
+      nfiles: 11
