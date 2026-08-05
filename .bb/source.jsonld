@@ -1,0 +1,44 @@
+{
+  "@context": "../../context/source.context.jsonld",
+  "@type": "dcat:Dataset",
+  "@id": "https://biobricks.ai/bricks/cpdat",
+  "dcterms:title": "The Chemical and Products Database (CPDat)",
+  "dcterms:description": "CPDat (Chemical and Products Database) maps more than 49,000 chemicals to usage/function terms and to ~16,000 consumer-product types, and is part of EPA's CompTox (CompTox Chemicals Dashboard) program. The brick downloads a CPDat release (CPDatRelease20201216.zip) from EPA's public gaftp server; the dataset of record is published on EPA's figshare (article 5352997, DOI 10.23645/epacomptox.5352997) under CC0.",
+  "dcterms:license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "biobricks:licenseName": "CC0 1.0",
+  "biobricks:licenseClass": "open",
+  "biobricks:merckCommercialUse": "permitted",
+  "biobricks:licenseEvidence": [
+    {
+      "source": "https://api.figshare.com/v2/articles/5352997",
+      "quote": "License: CC0 (Creative Commons Zero) - URL: https://creativecommons.org/publicdomain/zero/1.0/ ; Title: CPDat v4.0 (The Chemical and Products Database, CPDat, MySQL Data File)",
+      "confidence": "high"
+    },
+    {
+      "source": "README.md",
+      "quote": "URL: https://epa.figshare.com/articles/dataset/The_Chemical_and_Products_Database_CPDat_MySQL_Data_File/5352997",
+      "confidence": "high"
+    },
+    {
+      "source": "stages/01_download.sh",
+      "quote": "ftplink=\"https://gaftp.epa.gov/COMPTOX/Sustainable_Chemistry_Data/Chemistry_Dashboard/CPDat/CPDat2020-12-16/CPDatRelease20201216.zip\"",
+      "confidence": "high"
+    }
+  ],
+  "dcterms:creator": "Antony Williams (EPA)",
+  "dcterms:publisher": "U.S. Environmental Protection Agency (via figshare)",
+  "dcterms:identifier": "https://doi.org/10.23645/epacomptox.5352997",
+  "biobricks:reviewed": false,
+  "biobricks:reviewNotes": "Determined by BioBricks licensing-annotation agent (Claude Opus). The EPA figshare article of record for CPDat (article 5352997, DOI 10.23645/epacomptox.5352997) is published under CC0 1.0 (confirmed via the figshare v2 API), which is public-domain-equivalent: class=open, commercial=permitted. The brick's actual download is an older EPA gaftp release (2020-12-16) of the same EPA CPDat product; both trace to the same EPA public dataset. Confidence high.",
+  "prov:wasDerivedFrom": [
+    {
+      "@type": "dcat:Dataset",
+      "@id": "https://epa.figshare.com/articles/dataset/The_Chemical_and_Products_Database_CPDat_MySQL_Data_File/5352997",
+      "dcterms:title": "The Chemical and Products Database (CPDat) MySQL Data File",
+      "dcterms:publisher": "U.S. Environmental Protection Agency (figshare)",
+      "dcterms:license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "dcat:downloadURL": "https://gaftp.epa.gov/COMPTOX/Sustainable_Chemistry_Data/Chemistry_Dashboard/CPDat/CPDat2020-12-16/CPDatRelease20201216.zip",
+      "dcat:landingPage": "https://doi.org/10.23645/epacomptox.5352997"
+    }
+  ]
+}
